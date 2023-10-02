@@ -115,6 +115,7 @@ FROM employees;
 * On your results page, scroll around to find your generated ERD. The program automatically creates relationships but they may not be correct (one-to-one, or one-to-many). If you need to change the relationship type, follow the steps in the image below.
 ![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0a80ab53-a7f0-44dd-81b3-7ebb00cefdad)
 <br>
+
 ## **Week 4 Homework Assignment: MySQL on Cloud Platforms - Azure and GCP**
 
 ### **Objective**:
