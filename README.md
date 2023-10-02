@@ -27,9 +27,33 @@
 ![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/58af9f5d-c6be-4edb-811e-1c4fd59f3995)
 * Create a server name relevant to the assignment (mine was hha504-hw4)
 * Fill out all required fields
-![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/c60277db-62e5-41a1-8cdd-7b2acef9d4c3)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0e9f0669-a360-4de4-87df-c7a806223c1d)
 * Under Networking make sure to enable public access, and to allow public access under Firewall rules. For the start and end IP address, use 0.0.0.0 and 255.255.255.255
 ![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0314e284-320b-46e2-9e09-1b4f58275210)
+* Then press the button to create.
+
+## Connecting the GCP and Azure Database to MySQL Workbench
+### GCP
+* To connect your GCP database to MySQL Workbench, find the public IP to your instance you created. This can be found on the dashboard.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0a33af7b-13a9-47ef-8edc-49be27210e0d)
+* Then within your MySQL Workbench, click on the tiny plus sign.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/15866b9a-d6b9-4d75-934e-705d04f55d76)
+* A window will pop-up to setup a new connection. Name your connection and in the field for Hostname, input your public IP for the instance. The username should match the username you set up when creating your instance.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/cf64eebd-8e8d-4ce9-9efa-deddf6d99bd9)
+* Once you have filled out all the fields, hit the button to test connection. You will be prompted to input a password, which you designated when creating your instance. If you input the correct password, you should see a successful connection message.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/91c35b6e-8ec9-4d58-86c5-10c863da3a29)
+* Then you should be able to view this new connection on the homescreen.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/76ef4b63-53df-4c2f-8b35-c5dda26d31b2)
+
+### Azure
+* To connect my Azure databased to the MySQL Workbench, I followed the instructions found in this [quickstart guide](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/connect-workbench).
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/eee5526e-935f-455c-ba2c-38c74dbebac3)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/25566c91-abdd-4045-98bd-def38aef6d93)
+
+## MySQL Workbench for Database Interaction
+* For my SQL script, as a base I copied over the [example week4 code](https://github.com/hantswilliams/HHA_504_2023/blob/main/WK4/code/1_1_create.sql)
+* I then modified this code to be for employees instead of patients, changing some names and making the patients table an employees table, and the demographics table a contact_info table.
+* For my third table, I chose to create an employee tasks table
 
 
 
