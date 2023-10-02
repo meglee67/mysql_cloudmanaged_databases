@@ -2,6 +2,37 @@
 * HHA 504 HW 4
 * Due 10/1
 * OG Instructions below
+## Creating databases on Google Cloud Platform (GCP) and Azure 
+### GCP
+* Login on the [Cloud Console](https://console.cloud.google.com/) and click on the button new project. Name it something relevant to the task at hand.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/f9dcf680-5ad7-4ceb-9b2a-834f7c871f6f)
+* Then when on the page to create a new project, make sure to designate the location of the new project as AHI - GCP.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/cad03e37-6540-4a02-b80e-27ef4b204a35)
+* Once you have created a new project, make sure you are clicked into the right project. Go to the dashboard and check.
+* Then click on the navigation menu in the top left and find the tab that is called SQL near the bottom. Once you have clicked on this tab, you'll be taken to a page and you will see a button that says "Create Instance". CLick on it.
+  * Then you will see 3 database engine options. Choose the MySQL option.
+  ![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/aa6e3304-6f01-4c3b-916d-9af10041fac1)
+  * You will then have to click the button on screen to enable API.
+  * After this, keep the database version as MySQL 8,0
+  * For the "Choose Cloud SQL edition" choose <ins>Enterprise<ins>.
+  * When choosing a preset, choose <ins>Sandbox<ins>.
+  * Under "Customize your instance", go to machine configuration and choose <ins>Shared core;1 vCPU, 0.614 GB<ins>
+  * At "Connections" choose a Public IP, and add a network. Name the network AllowAll and set it to 0.0.0.0/0 and then click the button to create your instance.
+
+### Azure
+* Login on the [Azure Portal](https://azure.microsoft.com/en-us/get-started/azure-portal) and search in the bar for Azure Databased for MySQL. Click on it and then click create.
+* You will be brough to a page with two options, choose the Flexible Server.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/fefe900f-cce5-452a-9e1f-b557d0d094a0)
+* Choose an existing resource group or create a new one
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/58af9f5d-c6be-4edb-811e-1c4fd59f3995)
+* Create a server name relevant to the assignment (mine was hha504-hw4)
+* Fill out all required fields
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/c60277db-62e5-41a1-8cdd-7b2acef9d4c3)
+* Under Networking make sure to enable public access, and to allow public access under Firewall rules. For the start and end IP address, use 0.0.0.0 and 255.255.255.255
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0314e284-320b-46e2-9e09-1b4f58275210)
+
+
+
 ## **Week 4 Homework Assignment: MySQL on Cloud Platforms - Azure and GCP**
 
 ### **Objective**:
