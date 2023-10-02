@@ -54,9 +54,67 @@
 * For my SQL script, as a base I copied over the [example week4 code](https://github.com/hantswilliams/HHA_504_2023/blob/main/WK4/code/1_1_create.sql)
 * I then modified this code to be for employees instead of patients, changing some names and making the patients table an employees table, and the demographics table a contact_info table.
 * For my third table, I chose to create an employee tasks table
+```
+CREATE TABLE employee_tasks (
+    task_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,
+    task_description TEXT,
+    task_due_date DATE,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+```
+* So overall within the query window within MySQL Workbench, this is what my code looked like
+```
+CREATE DATABASE employment;
 
+USE employment;
 
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    SSN VARCHAR(9) UNIQUE NOT NULL
+);
 
+CREATE TABLE contact_info (
+    contact_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT UNIQUE,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    date_of_birth DATE,
+    address TEXT,
+    phone_number VARCHAR(15),
+    email VARCHAR(100),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+
+CREATE TABLE employee_tasks (
+    task_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,
+    task_description TEXT,
+    task_due_date DATE,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+```
+* Then to run the code, I highlighted each section and hit the lighting bolt button to run it
+ ![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/fe1c4325-b3ae-42da-8007-71c36c3e703c)
+* I then used the command below, replacing the word employees with the different titles of my various tables to obtain a preview of what the tables looked like. After each one, hitting the lightning bolt again.
+```
+SELECT *
+FROM employees;
+```
+* To create the ERD, I navigated to the Database button in the options ribbon and chose the button "Reverse Engineer", also accesisble by hitting CTRL+R
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/1c70e289-580d-4adb-abc4-973295945507)
+* You will then be taken to a window that asks you to choose a stored connection (I chose my GCP and then did the same process for my Azure afterwards). You may have to re-input the password again.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/f0676117-e35e-4d1b-8245-53bb465fc90b)
+* Then you can keep clicking the next button as the program goes through the process of Connect to DBMS, Select Schemas, Retrieve Objects, Select Objects, Reverse Engineer and Results.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/dac31a8b-fc1f-452a-a541-47a5f3176311)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/aec09ee3-420c-4e68-92c8-efcc1b1bfd20)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/3b686729-482b-4206-96ff-6d10231d2e8d)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/c83cf4b5-cb45-47e1-b964-f1362dda9327)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/4ab5cbc1-d6e3-4a6e-92cf-a9f5484f4ee1)
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/ebc6fe83-04bb-4801-861d-a2a2bf1557a1)
+* On your results page, scroll around to find your generated ERD. The program automatically creates relationships but they may not be correct (one-to-one, or one-to-many). If you need to change the relationship type, follow the steps in the image below.
+![image](https://github.com/meglee67/mysql_cloudmanaged_databases/assets/123908362/0a80ab53-a7f0-44dd-81b3-7ebb00cefdad)
+<br>
 ## **Week 4 Homework Assignment: MySQL on Cloud Platforms - Azure and GCP**
 
 ### **Objective**:
